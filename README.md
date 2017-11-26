@@ -9,9 +9,24 @@ This project was born from a need we were having to have a consistent, easy to i
 This is an api coded in node.js that wraps a lot of existent code beautifiers. It's purpose is to be easy to install, use and maintain. You can run it locally to use it on any existent IDE ( we are planning to release some atom packages on the near future to demonstrate the usage) or deploy it on a server to use it as a service.
 
 ## What is under the hood?
-We are using the following third parties to power this project. If you like this, please support them as well.
+We are using the following third party projects to power this project. If you like this, please support them as well.
 - [Prettier](https://github.com/prettier/prettier)
 - [Gofmt](https://golang.org/cmd/gofmt/)
+- [Node-cljfmt](https://github.com/snoe/node-cljfmt)
+- [php cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
+
+## Language Support
+
+| Language | Supported | 
+|----------|:-------------:|
+|PHP| &#10004; |
+Clojure| &#10004; |
+typescript| &#10004; |
+Go| &#10004; |
+javascript| &#10004; |
+CSS| &#10004; |
+Less| &#10004; |
+SCSS| &#10004; |
 
 ## Running
 
