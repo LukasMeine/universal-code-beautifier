@@ -11,6 +11,7 @@ This is an api coded in node.js that wraps a lot of existent code beautifiers. I
 ## What is under the hood?
 We are using the following third parties to power this project. If you like this, please support them as well.
 - [Prettier](https://github.com/prettier/prettier)
+- [Gofmt](https://golang.org/cmd/gofmt/)
 
 ## Running
 
