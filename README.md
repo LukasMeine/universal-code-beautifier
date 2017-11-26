@@ -11,3 +11,20 @@ This is an api coded in node.js that wraps a lot of existent code beautifiers. I
 ## What is under the hood?
 We are using the following third parties to power this project. If you like this, please support them as well.
 - [Prettier](https://github.com/prettier/prettier)
+
+## Running
+
+To start a web server for the application, run:
+
+    npm start
+
+## Documentation and API Reference
+
+After starting the web server for the application, full documentation can be found at:
+
+    http://localhost:3000/documentation
+    
+## Deploy
+    npm run deploy
+    
+    
