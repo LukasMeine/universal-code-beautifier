@@ -11,4 +11,5 @@ before_script:
   - sudo apt-get install -y php7.1
   - curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
   - composer global require friendsofphp/php-cs-fixer
+  - export PATH="$PATH:$HOME/.composer/vendor/bin"
   - chmod 0777 ./node_modules/.bin/mocha
