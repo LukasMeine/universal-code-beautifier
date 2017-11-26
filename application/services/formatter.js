@@ -11,7 +11,7 @@ function Formatter(request, res) {
 
   this.request = request;
   this.response = res;
-  this.availableFormats = ['php', 'js', 'go','json','scss','less','ts','css'];
+  this.availableFormats = ['php', 'js', 'go','json','scss','less','ts','css','clj'];
 }
 
 function overwrite(file,content,response)
@@ -44,7 +44,7 @@ Formatter.prototype.beautify = function() {
 
   let lang_format = this.request.body.extension;
   let content = this.request.body.content;
-  if (this.availableFormats.indexOf(lang_format) > 0) {
+  if (this.availableFormats.indexOf(lang_format) > -1) {
     let beautifier = this[lang_format](create_temp_file(content), this.response);
 
   } else {
@@ -102,6 +102,25 @@ Formatter.prototype.css = function(file, response) {
     overwrite(file,prettier.format(data,{parser:"css"}),response)
   });
 
+}
+
+Formatter.prototype.clj = function(file, response) {
+
+  exec("cljfmt " + file.name, function(error, stdout, stderr) {
+    if (typeof error != null) {
+      remove_and_print(file,response);
+    }
+  });
+}
+
+
+Formatter.prototype.php = function(file, response) {
+
+  exec("php-cs-fixer fix " + file.name, function(error, stdout, stderr) {
+    if (typeof error != null) {
+      remove_and_print(file,response);
+    }
+  });
 }
 
 Formatter.prototype.go = function(file, response) {
