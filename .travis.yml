@@ -1,1 +1,8 @@
-language: js
+language: node_js
+
+node_js:
+  - "6"
+
+before_script:
+
+  - chmod 0777 ./node_modules/.bin/mocha
