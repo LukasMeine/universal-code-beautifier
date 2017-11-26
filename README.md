@@ -3,6 +3,7 @@
 ![citaralab](https://user-images.githubusercontent.com/20716798/28749145-62359dba-7494-11e7-8fdf-a2e10f07dd03.png)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/f2d47b6738c1508024bc/maintainability)](https://codeclimate.com/github/LukasMeine/universal-code-beautifer/maintainability)
+[![Build Status](https://travis-ci.org/LukasMeine/universal-code-beautifer.svg?branch=master)](https://travis-ci.org/LukasMeine/universal-code-beautifer)
 
 ## About the project
 This project was born from a need we were having to have a consistent, easy to install and maintain wrapper to the existent code beautifiers available on the market. We found the amazing [Atom beautify](https://atom.io/packages/atom-beautify) package while looking for such solution, but it required an enourmous amount of effort to configure locally, and we found no alternative when we wanted to use it as a service.
