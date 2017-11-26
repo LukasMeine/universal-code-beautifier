@@ -1,9 +1,10 @@
 {
   "name": "code-beautifier",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./application/engine/www"
+    "start": "node ./application/engine/beautifier",
+    "deploy": "pm2 start ./application/engine/beautifier"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
