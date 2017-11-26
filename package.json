@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./application/engine/beautifier",
     "deploy": "pm2 start ./application/engine/beautifier",
-    "test": "mocha tests/**/*.js --reporter spec --timeout 15000"
+    "test": "mocha tests/**/*_test.js --reporter spec --exit"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
