@@ -16,6 +16,12 @@ This is an api coded in node.js that wraps a lot of existent code beautifiers. I
 To start a web server for the application, run:
 
     npm start
+    
+## Testing
+
+To run the tests:
+
+    npm test
 
 ## Documentation and API Reference
 
