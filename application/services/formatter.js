@@ -1,56 +1,57 @@
 module.exports = Formatter;
-var utilities = require("../helpers/utils.js");
-var utils = new utilities();
-var exec = require("child_process").exec;
-var fs = require("fs");
-var tmp = require("tmp");
-var utf8 = require("utf8");
+var utilities = require('../helpers/utils.js');
+var utils = new utilities;
+var exec = require('child_process').exec;
+var fs = require('fs');
+var tmp = require('tmp');
+var utf8 = require('utf8');
 const prettier = require("prettier");
 
 function Formatter(request, res) {
+
   this.request = request;
   this.response = res;
-  this.availableFormats = [
-    "php",
-    "js",
-    "go",
-    "json",
-    "scss",
-    "less",
-    "ts",
-    "css",
-    "clj"
-  ];
+  this.availableFormats = ['php', 'js', 'go','json','scss','less','ts','css','clj'];
 }
 
-function overwrite(file, content, response) {
+function overwrite(file,content,response)
+{
   fs.truncate(file.name, 0, function() {
+
     fs.writeFile(file.name, content, function(err) {
+
       remove_and_print(file, response);
+
     });
   });
 }
 
 function remove_and_print(beautifier, res) {
+
   fs.readFile(beautifier.name, "utf8", function(err, data) {
     beautifier.removeCallback();
     utils.utf8_format(data, res);
   });
 }
 
-function prettier(file, style, response) {
+function prettier_beautify(file,style,response)
+{
   fs.readFile(file.name, "utf8", function(err, data) {
-    overwrite(file, prettier.format(data, { parser: style }), response);
+    overwrite(file,prettier.format(data,{parser:style}),response)
   });
 }
 
-function shell_exec(command, file, response, func) {
+function shell_exec(command,file,response,func)
+{
   exec(command + file.name, function(error, stdout, stderr) {
+
     if (typeof error != null) {
-      if (func == true) {
-        remove_and_print(file, response);
-      } else {
-        overwrite(file, stdout, response);
+      if(func == true)
+      {
+        remove_and_print(file,response);
+      }
+      else {
+        overwrite(file,stdout,response)
       }
     }
   });
@@ -63,56 +64,63 @@ function create_temp_file(content) {
 }
 
 Formatter.prototype.beautify = function() {
+
   let lang_format = this.request.body.extension;
   let content = this.request.body.content;
   if (this.availableFormats.indexOf(lang_format) > -1) {
-    let beautifier = this[lang_format](
-      create_temp_file(content),
-      this.response
-    );
+    let beautifier = this[lang_format](create_temp_file(content), this.response);
+
   } else {
-    utils.response(
-      {
-        status: 400,
-        message: "File extension not supported"
-      },
-      this.response
-    );
+    utils.response({
+      status: 400,
+      message: 'File extension not supported'
+    }, this.response);
   }
-};
+
+}
 
 Formatter.prototype.js = function(file, response) {
-  prettier(file, "javascript", response);
-};
+
+  prettier_beautify(file,"babylon",response);
+}
 
 Formatter.prototype.json = function(file, response) {
-  prettier(file, "json", response);
-};
+
+  prettier_beautify(file,"json",response);
+}
 
 Formatter.prototype.less = function(file, response) {
-  prettier(file, "less", response);
-};
+
+  prettier_beautify(file,"less",response);
+}
 
 Formatter.prototype.scss = function(file, response) {
-  prettier(file, "scss", response);
-};
+
+  prettier_beautify(file,"scss",response);
+}
 
 Formatter.prototype.ts = function(file, response) {
-  prettier(file, "typescript", response);
-};
+
+  prettier_beautify(file,"typescript",response);
+}
 
 Formatter.prototype.css = function(file, response) {
-  prettier(file, "css", response);
-};
+
+  prettier_beautify(file,"css",response);
+}
 
 Formatter.prototype.clj = function(file, response) {
-  shell_exec("cljfmt ", file, response, true);
-};
+
+  shell_exec("cljfmt ",file,response,true);
+}
+
 
 Formatter.prototype.php = function(file, response) {
-  shell_exec("php-cs-fixer fix ", file, response, true);
-};
+
+  shell_exec("php-cs-fixer fix ",file,response,true);
+}
 
 Formatter.prototype.go = function(file, response) {
-  shell_exec("gofmt ", file, response, false);
-};
+
+  shell_exec("gofmt ",file,response,false);
+}

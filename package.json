@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./application/engine/beautifier",
-    "deploy": "pm2 start ./application/engine/beautifier"
+    "deploy": "pm2 start ./application/engine/beautifier",
+    "test": "mocha tests/**/*.js --reporter spec --timeout 15000"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -16,6 +17,7 @@
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
+    "mocha": "^4.0.1",
     "prettier": "1.8.2"
   }
 }
