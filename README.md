@@ -8,6 +8,21 @@ This project was born from a need we were having to have a consistent, easy to i
 ## So, what is this?
 This is an api coded in node.js that wraps a lot of existent code beautifiers. It's purpose is to be easy to install, use and maintain. You can run it locally to use it on any existent IDE ( we are planning to release some atom packages on the near future to demonstrate the usage) or deploy it on a server to use it as a service.
 
+## Running
+
+To start a web server for the application, run:
+
+    npm start
+
+## Documentation and API Reference
+
+After starting the web server for the application, full documentation can be found at:
+
+    http://localhost:3000/documentation
+    
+## Deploy
+    npm run deploy
+
 ## What is under the hood?
 We are using the following third party projects to power this project. If you like this, please support them as well.
 - [Prettier](https://github.com/prettier/prettier)
@@ -28,19 +43,6 @@ CSS| &#10004; |
 Less| &#10004; |
 SCSS| &#10004; |
 
-## Running
 
-To start a web server for the application, run:
-
-    npm start
-
-## Documentation and API Reference
-
-After starting the web server for the application, full documentation can be found at:
-
-    http://localhost:3000/documentation
-    
-## Deploy
-    npm run deploy
     
     
