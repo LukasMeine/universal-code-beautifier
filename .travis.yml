@@ -12,9 +12,5 @@ before_script:
   - wget http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O php-cs-fixer
   - sudo chmod a+x php-cs-fixer
   - sudo mv php-cs-fixer /usr/local/bin/php-cs-fixer
-  - sudo mkdir -p /usr/local/bin/
-  - sudo mv ~/Downloads/lein* /usr/local/bin/lein
-  - sudo chmod a+x /usr/local/bin/lein
-  - export PATH=$PATH:/usr/local/bin
   - npm install
   - chmod 0777 ./node_modules/.bin/mocha
