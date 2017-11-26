@@ -34,6 +34,21 @@ function remove_and_print(beautifier, res) {
   });
 }
 
+function shell_exec(command,file,response,func)
+{
+  exec(command + file.name, function(error, stdout, stderr) {
+    if (typeof error != null) {
+      if(func == true)
+      {
+        remove_and_print(file,response);
+      }
+      else {
+        overwrite(file,stdout,response)
+      }
+    }
+  });
+}
+
 function create_temp_file(content) {
   var tmpobj = tmp.fileSync();
   fs.appendFileSync(tmpobj.name, content);
@@ -106,30 +121,16 @@ Formatter.prototype.css = function(file, response) {
 
 Formatter.prototype.clj = function(file, response) {
 
-  exec("cljfmt " + file.name, function(error, stdout, stderr) {
-    if (typeof error != null) {
-      remove_and_print(file,response);
-    }
-  });
+  shell_exec("cljfmt ",file,response,true);
 }
 
 
 Formatter.prototype.php = function(file, response) {
 
-  exec("php-cs-fixer fix " + file.name, function(error, stdout, stderr) {
-    if (typeof error != null) {
-      remove_and_print(file,response);
-    }
-  });
+  shell_exec("php-cs-fixer fix ",file,response,true);
 }
 
 Formatter.prototype.go = function(file, response) {
 
-  exec("gofmt " + file.name, function(error, stdout, stderr) {
-
-    if (typeof error != null) {
-
-      overwrite(file,stdout,response)
-    }
-  });
+  shell_exec("gofmt ",file,response,false);
 }
