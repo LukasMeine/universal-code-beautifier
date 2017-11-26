@@ -7,6 +7,8 @@
 var app = require('./app');
 var debug = require('debug')('code-beautifier:server');
 var http = require('http');
+var fs = require('fs');
+var log = require('captains-log')();
 
 /**
  * Get port from environment and store in Express.
@@ -29,6 +31,7 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
+
 /**
  * Normalize a port into a number, string, or false.
  */
@@ -49,6 +52,19 @@ function normalizePort(val) {
   return false;
 }
 
+fs.readFile('./application/includes/startup.txt', function(err, file) {
+
+  var lines = file.toString().split('\n');
+  for (var i = 0; i < lines.length; i++) {
+
+    log.info(lines[i]);
+  }
+
+  log.info("Citara labs' Universal code beautifier is running at port " + port);
+  log.info("To shut down, press <CTRL> + C at any time.");
+  console.log('');
+});
+
 /**
  * Event listener for HTTP server "error" event.
  */
@@ -58,9 +74,9 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+  var bind = typeof port === 'string' ?
+    'Pipe ' + port :
+    'Port ' + port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
@@ -83,8 +99,8 @@ function onError(error) {
 
 function onListening() {
   var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
+  var bind = typeof addr === 'string' ?
+    'pipe ' + addr :
+    'port ' + addr.port;
   debug('Listening on ' + bind);
 }

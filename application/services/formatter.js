@@ -5,12 +5,13 @@ var exec = require('child_process').exec;
 var fs = require('fs');
 var tmp = require('tmp');
 var utf8 = require('utf8');
+const prettier = require("prettier");
 
 function Formatter(request, res) {
 
   this.request = request;
   this.response = res;
-  this.availableFormats = ['php', 'js', 'go'];
+  this.availableFormats = ['php', 'js', 'go','json','scss','less','ts','css'];
 }
 
 function overwrite(file,content,response)
@@ -52,6 +53,54 @@ Formatter.prototype.beautify = function() {
       message: 'File extension not supported'
     }, this.response);
   }
+
+}
+
+Formatter.prototype.js = function(file, response) {
+
+  fs.readFile(file.name, "utf8", function(err, data) {
+    overwrite(file,prettier.format(data),response)
+  });
+
+}
+
+Formatter.prototype.json = function(file, response) {
+
+  fs.readFile(file.name, "utf8", function(err, data) {
+    overwrite(file,prettier.format(data,{parser:"json"}),response)
+  });
+
+}
+
+Formatter.prototype.less = function(file, response) {
+
+  fs.readFile(file.name, "utf8", function(err, data) {
+    overwrite(file,prettier.format(data,{parser:"less"}),response)
+  });
+
+}
+
+Formatter.prototype.scss = function(file, response) {
+
+  fs.readFile(file.name, "utf8", function(err, data) {
+    overwrite(file,prettier.format(data,{parser:"scss"}),response)
+  });
+
+}
+
+Formatter.prototype.ts = function(file, response) {
+
+  fs.readFile(file.name, "utf8", function(err, data) {
+    overwrite(file,prettier.format(data,{parser:"typescript"}),response)
+  });
+
+}
+
+Formatter.prototype.css = function(file, response) {
+
+  fs.readFile(file.name, "utf8", function(err, data) {
+    overwrite(file,prettier.format(data,{parser:"css"}),response)
+  });
 
 }
 
