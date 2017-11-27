@@ -52,6 +52,16 @@ CSS| &#10004; |
 Less| &#10004; |
 SCSS| &#10004; |
 
+## Built With
 
+* [Express](https://expressjs.com) - The web framework used
+* [NPM](https://www.npmjs.com/) - Dependency Management
+* [Travis](https://travis-ci.org/) - Continuous integration 
+* [Chai.js](http://chaijs.com/) - Automated testing 
+* [Mocha.js](https://mochajs.org/) - Automated testing 
+
+
+
+Coded with ❤ by Citara Labs
     
     
