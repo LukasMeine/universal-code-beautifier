@@ -38,6 +38,7 @@ We are using the following third party projects to power this project. If you li
 - [Gofmt](https://golang.org/cmd/gofmt/)
 - [Node-cljfmt](https://github.com/snoe/node-cljfmt)
 - [php cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
+- [ruby-beautify](https://github.com/erniebrodeur/ruby-beautify)
 
 ## Language Support
 
