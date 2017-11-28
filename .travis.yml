@@ -13,7 +13,7 @@ before_script:
   - sudo chmod a+x php-cs-fixer
   - sudo mv php-cs-fixer /usr/local/bin/php-cs-fixer
   - npm install -g node-cljfmt
-  - sudo apt-add-repository ppa:brightbox/ruby-ng
+  - sudo apt-add-repository ppa:brightbox/ruby-ng -y
   - sudo apt-get update
   - sudo apt-get install -y ruby2.4
   - gem install ruby-beautify
