@@ -16,7 +16,7 @@ This is an api coded in node.js that wraps a lot of existent code beautifiers. I
 To start a web server for the application, run:
 
     npm start
-    
+
 ## Testing
 
 To run the tests:
@@ -28,7 +28,7 @@ To run the tests:
 After starting the web server for the application, full documentation can be found at:
 
     http://localhost:3000/documentation
-    
+
 ## Deploy
     npm run deploy
 
@@ -41,10 +41,11 @@ We are using the following third party projects to power this project. If you li
 
 ## Language Support
 
-| Language | Supported | 
+| Language | Supported |
 |----------|:-------------:|
 |PHP| &#10004; |
 Clojure| &#10004; |
+Ruby| &#10004; |
 typescript| &#10004; |
 Go| &#10004; |
 JSON| &#10004; |
@@ -57,12 +58,10 @@ SCSS| &#10004; |
 
 * [Express](https://expressjs.com) - The web framework used
 * [NPM](https://www.npmjs.com/) - Dependency Management
-* [Travis](https://travis-ci.org/) - Continuous integration 
-* [Chai.js](http://chaijs.com/) - Automated testing 
-* [Mocha.js](https://mochajs.org/) - Automated testing 
+* [Travis](https://travis-ci.org/) - Continuous integration
+* [Chai.js](http://chaijs.com/) - Automated testing
+* [Mocha.js](https://mochajs.org/) - Automated testing
 
 
 
 Coded with ❤ by Citara Labs
-    
-    
