@@ -47,6 +47,7 @@ We are using the following third party projects to power this project. If you li
 Clojure| &#10004; |
 typescript| &#10004; |
 Go| &#10004; |
+JSON| &#10004; |
 javascript| &#10004; |
 CSS| &#10004; |
 Less| &#10004; |
