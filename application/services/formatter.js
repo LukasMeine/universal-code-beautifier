@@ -11,7 +11,7 @@ function Formatter(request, res) {
 
   this.request = request;
   this.response = res;
-  this.availableFormats = ['php', 'js', 'go','json','scss','less','ts','css','clj'];
+  this.availableFormats = ['php', 'js', 'go','json','scss','less','ts','css','clj','rb'];
 }
 
 function overwrite(file,content,response)
@@ -114,6 +114,10 @@ Formatter.prototype.clj = function(file, response) {
   shell_exec("cljfmt ",file,response,true);
 }
 
+Formatter.prototype.rb = function(file, response) {
+
+  shell_exec("ruby-beautify --overwrite ",file,response,true);
+}
 
 Formatter.prototype.php = function(file, response) {
 

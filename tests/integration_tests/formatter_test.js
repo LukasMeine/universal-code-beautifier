@@ -102,3 +102,33 @@ describe('Format golang code', () => {
   });
 
 });
+
+
+describe('Format ruby code', () => {
+
+  var file_content = read_file('./tests/integration_tests/code_samples/messy/test.rb')
+
+  it('Try to format a ruby code', function(done) {
+    chai
+      .request(server)
+      .post('/format')
+      .set('content-type', 'application/x-www-form-urlencoded')
+      .send({
+
+        extension: "rb",
+        content : file_content
+      })
+      .end(function(error, response) {
+        if (error) {
+          done(error);
+        } else {
+          var expect = require('chai').expect;
+          expect(response.status).to.be.equal(200);
+          expect(response.text).to.be.equal(read_file('./tests/integration_tests/code_samples/beautified/test.rb'));
+          done();
+        }
+      });
+
+  });
+
+});
