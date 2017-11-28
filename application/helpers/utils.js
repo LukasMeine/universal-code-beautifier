@@ -16,5 +16,5 @@ Utils.prototype.response = function(content, res) {
 Utils.prototype.utf8_format = function(content, res) {
 
     res.header("Content-Type", "text/plain; charset=utf-8");
-    res.send(utf8.encode(content));
+    res.send(content);
 }
