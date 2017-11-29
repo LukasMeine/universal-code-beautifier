@@ -11,6 +11,11 @@ This project was born from a need we were having to have a consistent, easy to i
 ## So, what is this?
 This is an api coded in node.js that wraps a lot of existent code beautifiers. It's purpose is to be easy to install, use and maintain. You can run it locally to use it on any existent IDE ( we are planning to release some atom packages on the near future to demonstrate the usage) or deploy it on a server to use it as a service.
 
+## Use cases
+
+[Devmind.io](https://devmind.io) Uses this project to beautify their user's code in real time. 
+![devmind.io](https://user-images.githubusercontent.com/20716798/33351262-077dd472-d48a-11e7-8c93-3e3181f367fa.gif)
+
 ## Running
 
 To start a web server for the application, run:
