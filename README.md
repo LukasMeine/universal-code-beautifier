@@ -13,7 +13,8 @@ This is an api coded in node.js that wraps a lot of existent code beautifiers. I
 
 ## Use cases
 
-[Devmind.io](https://devmind.io) Uses this project to beautify their user's code in real time. 
+[Devmind.io](https://devmind.io) Uses this project to beautify their user's code with the click of a button
+
 ![devmind.io](https://user-images.githubusercontent.com/20716798/33351262-077dd472-d48a-11e7-8c93-3e3181f367fa.gif)
 
 ## Running
