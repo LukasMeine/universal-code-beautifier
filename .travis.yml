@@ -18,4 +18,10 @@ before_script:
   - sudo apt-get update
   - sudo apt-get install -y ruby2.4
   - gem install ruby-beautify
+  - curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
+  - tar xvf go1.6.linux-amd64.tar.gz
+  - sudo chown -R root:root ./go
+  - sudo mv go /usr/local
+  - echo "export GOPATH=$HOME/work" >> ~/.profile
+  - echo "export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin" >> ~/.profile
   - chmod 0777 ./node_modules/.bin/mocha
