@@ -12,9 +12,16 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
+    "captains-log": "latest",
+    "tmp": "latest",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
+    "utf8": "latest",
     "pretty": "^2.0.0",
+    "request": "latest",
+    "chai": "latest",
+    "chai-http": "latest",
+    "mocha": "latest",
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
