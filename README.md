@@ -2,6 +2,8 @@
 
 TESTING VIGILANCE 
 
+WOW I SAVED MY FILE ON DEVMIND AND IT WAS UPDATED ON MY LOCAL COMPUTER AS WELL :o
+
 ![citaralab](https://user-images.githubusercontent.com/20716798/28749145-62359dba-7494-11e7-8fdf-a2e10f07dd03.png)
 
 [![Devmind Beautifier](https://beautifier.devmind.io/badge)](https://devmind.io/)
