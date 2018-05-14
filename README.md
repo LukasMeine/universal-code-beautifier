@@ -61,7 +61,7 @@ javascript| &#10004; |
 CSS| &#10004; |
 Less| &#10004; |
 SCSS| &#10004; |
-Python| Planned |
+Python| Coming soon |
 
 ## Built With
 
