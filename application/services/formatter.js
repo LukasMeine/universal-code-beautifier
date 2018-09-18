@@ -72,10 +72,7 @@ Formatter.prototype.beautify = function() {
     let beautifier = this[lang_format](create_temp_file(content), this.response,content);
 
   } else {
-    utils.response({
-      status: 400,
-      message: 'File extension not supported'
-    }, this.response);
+    utils.utf8_format(content, this.response);
   }
 
 }
