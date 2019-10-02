@@ -71,4 +71,4 @@ Python| Coming soon |
 
 
 
-Coded with ❤ by Citara Labs
+Coded with ❤ by Lucas Meine
