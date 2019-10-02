@@ -1,7 +1,5 @@
 # Universal code beautifier
 
-![citaralab](https://user-images.githubusercontent.com/20716798/28749145-62359dba-7494-11e7-8fdf-a2e10f07dd03.png)
-
 [![Devmind Beautifier](https://beautifier.devmind.io/badge)](https://devmind.io/)
 [![Maintainability](https://api.codeclimate.com/v1/badges/f5945bc04a1b5bec1b11/maintainability)](https://codeclimate.com/github/LukasMeine/universal-code-beautifier/maintainability)
 [![Build Status](https://travis-ci.org/LukasMeine/universal-code-beautifier.svg?branch=master)](https://travis-ci.org/LukasMeine/universal-code-beautifier)
