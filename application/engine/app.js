@@ -1,16 +1,16 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var utilities = require('../helpers/utils.js');
-var utils = new utilities;
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const utilities = require('../helpers/utils.js');
+const utils = new utilities;
 
-var index = require('../routes/index');
-var format = require('../routes/format');
+const index = require('../routes/index');
+const format = require('../routes/format');
 
-var app = express();
+const app = express();
 
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({
